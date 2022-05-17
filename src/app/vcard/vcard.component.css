@@ -1,0 +1,30 @@
+
+.example-card {
+  max-width: 400px;
+  /* background-image:url('https://yt3.ggpht.com/zyo0smN-xB_CHJm0lrDlO7sihp86QM6x-0TiNFn3sd1zTrfhClaqY-tv-ezFTKds9QQpJ380QcQ=s900-c-k-c0x00ffffff-no-rj') ; */
+  background-repeat:no-repeat;
+  position: relative;
+  height: 230px;
+  border:1px solid #f2f2f2;
+  padding:15px;
+  background-color: #fff !important;
+}
+
+.bottom-part { 
+  position: absolute;
+  bottom:5px;
+  width: 100%;
+ }
+.bottom-part i{  margin-right: 8px;}
+p{ font-size: 15px; }
+/* .example-card::after { */
+  /* content: "";
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;    */
+/* } */
+

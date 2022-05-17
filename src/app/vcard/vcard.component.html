@@ -1,0 +1,39 @@
+<div class="container py-5" >
+  <div class="example-card" style="background-image:url('{{bg_new}}');" id="capture">
+    <div class="row">
+      <div class="col-8">
+        <h2 class="mb-0 text-dark" >{{names}}</h2>
+        <p class="text-xs" >{{organisations}}</p>
+        <div>
+          <h6 class="mb-0" > <i class="fa fa-phone text-danger"></i> <span class="d-none d-md-inline-block" > Phone:</span> {{phones}}</h6>
+          <h6 class="mb-0" > <i class="fa fa-globe text-danger"></i> <span class="d-none d-md-inline-block" >Webiste:</span> {{url}}</h6>
+          <h6 class="mb-0" > <i class="fa fa-at text-danger"></i> <span class="d-none d-md-inline-block" >Email :</span> {{email}}</h6>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <qr-code [value]='qr_data' ></qr-code>
+      </div>
+    </div>
+
+    <div class="bottom-part">
+      <div class="d-flex">
+      <i class="fa fa-facebook-square text-primary"></i>
+      
+      <i class="fa fa-youtube text-danger"></i>
+      <i class="fa fa-linkedin text-info"></i>
+      <i class="fa fa-whatsapp text-success"></i>
+      <i class="fa fa-instagram text-danger"></i>
+      <i class="fa fa-twitter-square text-info"></i>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+  <button (click)="clickMe()" class="btn btn-primary mt-5" >Download</button>
+
+</div>

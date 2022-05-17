@@ -1,0 +1,42 @@
+
+<mat-card class="example-card">
+    <mat-card-header >
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{names}}</mat-card-title>
+      <mat-card-subtitle>{{organisations}}</mat-card-subtitle>
+      </mat-card-header>
+    
+    <qr-code [value]='qr_data' [size]="150" ></qr-code>
+    <mat-card-content>
+      <p>Phone:{{phones}}
+      </p>
+      <p>Email:
+        {{email}}
+      </p>
+      <p>Website:
+        {{url}}
+      </p>
+      <p>Profile:
+        {{url2}}
+      </p>
+
+      <!-- <a href="https://web.whatsapp.com/send?text=www.google.com" data-text="Take a look at this awesome website:" class="wa_btn wa_btn_s" >Share1</a> -->
+    </mat-card-content>
+
+    
+
+    
+     <button mat-fab shareButton="facebook"
+                #fbBtn="shareButton" [style.backgroundColor]="fbBtn?.color" 
+                >
+             
+                <i  *ngIf="fbBtn" class="fa fa-facebook"></i>
+
+</button>
+<button mat-fab shareButton="whatsapp" #waBtn="shareButton" [style.backgroundColor]="waBtn?.color" >
+  <i  *ngIf="waBtn" class="fa fa-whatsapp" ></i>
+  
+</button>
+<button mat-fab shareButton="print" ></button>
+  </mat-card> 
+

@@ -1,0 +1,174 @@
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+                             
+            <div class="card d-none px-0 pt-4 pb-0 mt-3 mb-3">
+                <h2 id="heading">Participate in our survey</h2>
+                <p>Fill all form field to go to next step</p>
+                   <div id="msform">
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                        <li [class.active]="current_stage==1" id="account"><strong>Account</strong></li>
+                        <li [class.active]="current_stage==2"id="question-1"><strong>question-1</strong></li>
+                        <li [class.active]="current_stage==3"id="question-2"><strong>Question-2</strong></li>
+                        <li [class.active]="current_stage==4"id="question-3"><strong>Question-3</strong></li>
+                        <li [class.active]="current_stage==5"id="question-4"><strong>Question-4</strong></li>
+                        <li [class.active]="current_stage==6"id="finish"><strong>Finish</strong></li>
+                            </ul>
+                   
+                    <!-- survey page-header -->
+
+                        <div class="form-card" *ngIf="current_stage=='1'" >
+                            <div class="row"><mat-progress-bar mode="determinate" value="20"></mat-progress-bar>
+                                <div class="col-7" id="account">
+                                    <h2 class="fs-title">Personal Information:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 1 - 6</h2>
+                                </div>
+                            </div> <label class="fieldlabels">Email: *</label>
+                             <input type="email" [(ngModel)]="email" placeholder="Email Id" /> 
+                             <label class="fieldlabels">Username: *</label>
+                              <input type="text" [(ngModel)]="username" placeholder="UserName" />
+                                 <label class="fieldlabels">Contact No.: *</label>
+                                 <input type="text" [(ngModel)]="phone1" placeholder="Contact No." />
+                                 <label class="fieldlabels">Alternate Contact No.: *</label>
+                                  <input type="text" [(ngModel)]="phone2"  placeholder="Alternate Contact No." />
+                                <button type="button" class="next action-button" (click)="changeStage(2)">Next </button>
+                               
+                            </div> 
+                    
+                           <!-- survey page-1 -->
+                        <div class="form-card" *ngIf="current_stage=='2'" >
+                            <div class="row"><mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                                <div class="col-7"id="question-1">
+                                    <h2 class="fs-title">question-1</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 2 - 6</h2>
+                                </div>
+                            </div> 
+                        <div>
+                            <h2>Which source of information do you use while choosing real estate property?</h2>
+                        </div>
+                        
+                         
+                          <mat-radio-group aria-label="Select an option"  (change)="setq1($event)" >
+                            <mat-radio-button value="brokers">Brokers</mat-radio-button>
+                            <mat-radio-button value="familyorfriends">Family or Friends</mat-radio-button>
+                            <mat-radio-button value="internet">Internet</mat-radio-button>
+                            <mat-radio-button value="others">Others</mat-radio-button>
+                          </mat-radio-group>
+                        
+                           <button type="button" class="next action-button" (click)="changeStage(3)">Next </button>
+                        </div>
+                    
+                        <!-- survey page-2 -->
+                    
+                        <div class="form-card" *ngIf="current_stage=='3'" >
+                            <div class="row"><mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
+                                <div class="col-7" id="question-2">
+                                    <h2 class="fs-title">Question-2</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 3 -6</h2>
+                                </div>
+                            </div> 
+                            <div>
+                                <h2>Do you own a property?</h2>
+                            </div>
+                            
+                             
+                              <mat-radio-group aria-label="Select an option" (change)="setq2($event)">
+                                <mat-radio-button value="yes">yes</mat-radio-button><BR>
+                                <mat-radio-button value="no">No</mat-radio-button>
+                                
+                              </mat-radio-group>
+                            
+                                <button type="button" class="next action-button" (click)="changeStage(4)">Next </button>
+                            </div>
+
+
+                            <!-- survey page-3 -->
+
+                            <div class="form-card" *ngIf="current_stage=='4'" >
+                                <div class="row"><mat-progress-bar mode="determinate" value="80"></mat-progress-bar>
+                                    <div class="col-7" id="question-3">
+                                        <h2 class="fs-title">Question-3</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 4 - 6</h2>
+                                    </div>
+                                </div> 
+                                <div>
+                                    <h2>Which type of property do you own?</h2>
+                                </div>
+                                
+                                 
+                                  <mat-radio-group aria-label="Select an option"(change)="setq3($event)">
+                                    <mat-radio-button value="bunglow">Bunglow</mat-radio-button><BR>
+                                    <mat-radio-button value="apartment">Apartment</mat-radio-button><br>
+                                    <mat-radio-button value="townhouse">Townhouse</mat-radio-button><br>
+                                    <mat-radio-button value="other">Other</mat-radio-button>
+                                    
+                                  </mat-radio-group>
+                                
+                                    <button type="button" class="next action-button" (click)="changeStage(5)">Next </button>
+                                </div>
+    
+                              <!-- survey page-4-->
+
+                                <div class="form-card" *ngIf="current_stage=='5'" >
+                                    <div class="row"><mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+                                        <div class="col-7" id="question-4">
+                                            <h2 class="fs-title">Question-4</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 5 - 6</h2>
+                                        </div>
+                                    </div> 
+                                    <div>
+                                        <h2>If you get the right property will you be able to make a decision immediately?</h2>
+                                    </div>
+                                    
+                                     
+                                      <mat-radio-group aria-label="Select an option"(change)="setq4($event)">
+                                        <mat-radio-button value="yes">Yes</mat-radio-button><BR>
+                                        <mat-radio-button value="no">No</mat-radio-button><br>
+                                        <mat-radio-button value="maybe">May be</mat-radio-button><br>
+                                        
+                                      </mat-radio-group>
+                                    
+                                        <button type="button" class="next action-button" (click)="changeStage(6)">Next </button>
+                                    </div>
+        
+
+                              <!-- survey page-5 -->
+                    
+                    
+                        <div class="form-card" *ngIf="current_stage=='6'" >
+                            <div class="row">
+                                <div class="col-7" id="question-5">
+                                    <h2 class="fs-title">Finish:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 6 - 6</h2>
+                                </div>
+                            </div> <br><br>
+                            <h2 class="purple-text text-center"><strong>Thank you</strong></h2> <br>
+                            <div class="row justify-content-center">
+                                <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
+                            </div> <br><br>
+                            <div class="row justify-content-center">
+                                <div class="col-7 text-center">
+                                    <h5 class="purple-text text-center">You Have Successfully Signed Up</h5>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
